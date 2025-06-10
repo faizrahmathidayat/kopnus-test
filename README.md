@@ -28,10 +28,11 @@ DB_USERNAME=root
 DB_PASSWORD=password
 ```
 
-### **4. Generate Key & Migrasi Database**
+### **4. Generate Key, Migrasi Database & Seeder**
 ```sh
 php artisan key:generate
-php artisan migrate --seed
+php artisan migrate
+php artisan db:seed --class=UserSeeder
 ```
 ## 🛠 Access
 ### 👤 Recruiter
