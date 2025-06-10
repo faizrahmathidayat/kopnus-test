@@ -51,6 +51,10 @@ API akan berjalan di: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ---
 
+## Stuktur Database
+Klik tautan berikut untuk melihat class diagram:
+👉 [Lihat Diagram](https://drive.google.com/file/d/1AssRuMQ0ieJmC4X3AUZv53JtU0zKcBe5/view?usp=sharing)
+
 ## 📌 Dokumentasi API [Postman]
 Dokumentasi API ini tersedia dalam format Postman Collection. Silakan unduh atau impor langsung ke Postman melalui tautan di bawah:
 ## 🔗 Unduh Koleksi Postman
