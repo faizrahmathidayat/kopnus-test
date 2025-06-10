@@ -37,13 +37,13 @@ php artisan key:generate
 php artisan migrate --seed
 ```
 ## 🛠 Access
-### **1. Recruiter**
-username : recruiter
-password : 12345678
+### 👤 Recruiter
+- **Username:** `recruiter`  
+- **Password:** `12345678`
 
-### **2. JobSeeker**
-username : recruiter
-password : 12345678
+### 👤 Job Seeker
+- **Username:** `jobseeker`  
+- **Password:** `12345678`
 
 ### **5. Jalankan Server**
 ```sh
