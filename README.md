@@ -1,8 +1,5 @@
 # Kopnus TEST - Simple Job Portal API
 
-## 📌 Deskripsi Singkat
-API CRUD untuk entitas User menggunakan Laravel dan MySQL. API ini mencakup validasi input, logging, dan pengujian dengan PHPUnit.
-
 ## 🚀 Instalasi
 
 ### **1. Clone Repository**
