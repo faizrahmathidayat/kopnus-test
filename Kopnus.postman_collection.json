@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "9991c040-91d5-4092-81af-1e9383adc238",
+		"name": "Kopnus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28231300",
+		"_collection_link": "https://www.postman.com/dev-bizani/workspace/kopnus-test/collection/28231300-9991c040-91d5-4092-81af-1e9383adc238?action=share&source=collection_link&creator=28231300"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"jobseeker\",\r\n    \"password\" : 12345678\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}auth/login",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}auth/logout",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}auth/me",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Seekers",
+			"item": [
+				{
+					"name": "Get Vacancies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}jobseekers/vacancies?search&per_page=10",
+							"host": [
+								"{{base_url}}jobseekers"
+							],
+							"path": [
+								"vacancies"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Vacancy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}jobseekers/vacancies/2",
+							"host": [
+								"{{base_url}}jobseekers"
+							],
+							"path": [
+								"vacancies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply Vacancy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "cover_letter",
+									"value": "Programmer > 5 tahun",
+									"type": "text"
+								},
+								{
+									"key": "attachment",
+									"description": "alowed : pdf, doc, docs",
+									"type": "file",
+									"src": "postman-cloud:///1f045d63-cedc-4a20-9f70-e175839a1bbe"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}jobseekers/vacancies/apply",
+							"host": [
+								"{{base_url}}jobseekers"
+							],
+							"path": [
+								"vacancies",
+								"apply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Applied Jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}jobseekers/applied-jobs?search&per_page=10",
+							"host": [
+								"{{base_url}}jobseekers"
+							],
+							"path": [
+								"applied-jobs"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Apply Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}jobseekers/applied-jobs/2",
+							"host": [
+								"{{base_url}}jobseekers"
+							],
+							"path": [
+								"applied-jobs",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recruiters",
+			"item": [
+				{
+					"name": "Get Jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}recruiters/jobs?search&per_page=10",
+							"host": [
+								"{{base_url}}recruiters"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}recruiters/jobs/2",
+							"host": [
+								"{{base_url}}recruiters"
+							],
+							"path": [
+								"jobs",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Senior QA\",\r\n    \"description\" : \"QA Enginer\",\r\n    \"start_at\" : \"2025-06-10 16:00:00\",\r\n    \"end_at\" : \"2025-06-30 16:00:00\", // harus lebih besar dari start_at\r\n    \"is_draft\" : 0, // jika is_draft 1 , maka is_publish harus 0 (0 = tidak disimpan sebagai draft, 1 = disimpan sebagai draft)\r\n    \"is_publish\" : 1 // jika is_publsh 1 , maka is_draft harus 0 (0 = tidak di publish kepada job seeker, 1=dipublish kepada jobseeker)\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}recruiters/jobs/store",
+							"host": [
+								"{{base_url}}recruiters"
+							],
+							"path": [
+								"jobs",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Senior QA\",\r\n    \"description\" : \"Senior QA Enginer\",\r\n    \"start_at\" : \"2025-06-10 16:00:00\",\r\n    \"end_at\" : \"2025-06-30 16:00:00\", // harus lebih besar dari start_at\r\n    \"is_draft\" : 0, // jika is_draft 1 , maka is_publish harus 0 (0 = tidak disimpan sebagai draft, 1 = disimpan sebagai draft)\r\n    \"is_publish\" : 1 // jika is_publsh 1 , maka is_draft harus 0 (0 = tidak di publish kepada job seeker, 1=dipublish kepada jobseeker)\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}recruiters/jobs/1",
+							"host": [
+								"{{base_url}}recruiters"
+							],
+							"path": [
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}recruiters/jobs/2",
+							"host": [
+								"{{base_url}}recruiters"
+							],
+							"path": [
+								"jobs",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
